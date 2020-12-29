@@ -96,11 +96,7 @@ fi
 # Build a list of recipes/task
 if [[ -n $recipe_list_file ]];then
     for line in $(${CAT} $recipe_list_file);do
-        if [[ -r ${line:A} ]];then
-            recipe_list+=("${line:A}")
-        else
-            echo "Skipping $line"
-        fi
+        recipe_list+=("${line}")
     done
 else
     for recipe_override_dir in $recipe_override_dirs;do
